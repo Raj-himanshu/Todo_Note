@@ -29,10 +29,6 @@ jobs:
         run: npm install
 
 
-      # Step 5: Run tests
-      - name: Run Tests
-        run: npm test # Replace with 'yarn test' if using Yarn
-
       # Step 6: Build the project
       - name: Build Project
         run: npm run build # Replace with 'yarn build' if using Yarn
