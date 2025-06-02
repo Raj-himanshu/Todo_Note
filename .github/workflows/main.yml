@@ -1,0 +1,41 @@
+name: Frontend CI Pipeline
+
+# Trigger the workflow on pushes and pull requests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Use the appropriate version for your project
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Lint the code
+      - name: Lint Code
+        run: npm run lint # Replace with 'yarn lint' if using Yarn
+
+      # Step 5: Run tests
+      - name: Run Tests
+        run: npm test # Replace with 'yarn test' if using Yarn
+
+      # Step 6: Build the project
+      - name: Build Project
+        run: npm run build # Replace with 'yarn build' if using Yarn
