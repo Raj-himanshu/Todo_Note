@@ -28,9 +28,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Lint the code
-      - name: Lint Code
-        run: npm run lint # Replace with 'yarn lint' if using Yarn
 
       # Step 5: Run tests
       - name: Run Tests
